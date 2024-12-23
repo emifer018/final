@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UYUNI</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Altura mínima para que ocupe toda la ventana */
+            background-image: url('aa.jpg'); /* Tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para que ocupe toda la pantalla */
+            background-repeat: no-repeat; /* Evita que se repita */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Hace que el fondo sea fijo */
+            background-color: #ece7dd; /* Color de respaldo */
+        }
+
+        header {
+            background-color: #123a62;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10; /* Asegura que esté sobre el fondo */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: #e5deca;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: relative;
+            z-index: 10; /* Asegura que esté sobre el fondo */
+        }
+
+        nav button {
+            background-color: #e0dbd1;
+            color: rgb(18, 14, 14);
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        nav button:hover {
+            background-color: #5f9cd8;
+        }
+
+        section {
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 1400px;
+            background-color: rgba(131, 238, 234, 0);
+            box-shadow: 0 0 10px rgba(18, 17, 17, 0.1);
+            border-radius: 20px;
+            overflow: auto;
+            color: rgb(3, 3, 3);
+        }
+
+        section h2 {
+            color: #d96308;
+            text-align: center; 
+        }
+
+        iframe {
+            width: 400px;
+            height: 280px;
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        .back-to-nav {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-to-nav a {
+            color: #5b0d0d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-to-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente si hay espacio */
+            
+        }
+
+                
+        footer {
+            background-color: #622512d7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+        }
+        #seccion3 {
+    text-align: center; /* Centra el texto en la sección */
+}
+
+.videos-container {
+    display: flex;
+    justify-content: center; /* Centra los videos horizontalmente */
+    gap: 20px; /* Espacio entre los videos */
+    flex-wrap: nowrap; /* Asegura que los videos no se muevan a otra fila */
+    margin-top: 20px;
+}
+
+.video {
+    width: 560px; /* Ajusta el ancho del contenedor de cada video */
+    text-align: center;
+}
+
+iframe {
+    width: 100%; /* Hace que el iframe ocupe todo el espacio de su contenedor */
+    height: 315px; /* Ajusta la altura del video */
+    border: none; /* Elimina el borde del iframe */
+}
+
+.back-to-nav {
+    margin-top: 20px;
+}
+
+      
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>¡Un viaje a Uyuni!</h1>
+    </header>
+
+    <nav>
+        <button onclick="location.href='#seccion1'"></button>
+        <button onclick="location.href='#seccion2'">Imagenes de Uyuni</button>
+        <button onclick="location.href='#seccion3'">Videos de Uyuni</button>
+        <button onclick="location.href='#seccion1'"></button>
+        <button onclick="window.location.href='file:///H:/dise%C3%B1o%20web/final/index.html#imagenes';">Menu Principal</button>
+
+    </nav>
+    
+
+    <section id="seccion1">
+
+        <marquee><img src="bb.jpg" width="400" height="400">
+                <img src="cc.jpg" width="400" height="400">
+                <img src="dd.jpg" width="400" height="400">
+                <img src="ee.jpg" width="400" height="400">
+                <img src="ff.jpg" width="400" height="400">
+            </marquee>
+        <div class="back-to-nav">
+      
+        </div>
+    </section>
+
+    <section id="seccion2">
+        <h2>imagenes de Uyuni</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td><img src="data:image/jpeg;base64,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" width="300" height="250"></td>
+                    <td><img src="https://denomades-blog.imgix.net/blog/wp-content/uploads/2020/11/02132247/salar-de-uyuni-3-dias-san-pedro-de-atacama-a-uyuni-id209-2-es.jpg?auto=compress%2Cformat&ixlib=php-3.3.1" width="300" height="250"></td>
+                    <td><img src="https://salaruyuni.cl/wp-content/uploads/sites/8/2023/11/uyu-atractivo-salar-uyuni-04-1024x582.jpg" width="300" height="250"></td>
+                </tr>
+                <tr>
+                    <td><img src="https://boliviaturistica.org/wp-content/uploads/2017/12/imagenes-creativas-salar-de-uyuni10.jpg" width="300" height="250"></td>
+                    <td><img src="https://elpotosi.net/img/contents/images_980/2024/07/10/109161b3-46bd-4120-a58c-db1989f77372.jpg" width="300" height="250"></td>
+                    <td><img src="https://elpotosi.net/img/contents/images_980/2024/07/16/c5c68a40-d015-4596-a1f7-7dbc826f6ae3.jpg" width="300" height="250"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="back-to-nav">
+            <a href="#">Volver al menú</a>
+        </div>
+    </section>
+
+    <section id="seccion3">
+        <h2>Videos</h2>
+    
+        <div class="videos-container">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/82pXbyHTiQk?si=bIb82hK8-ZUh5HTy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    "Tiktoker"<br>
+                    Luisito Comunica en Uyuni<br>
+                    Waoo que país tan hermoso dice Luisito!!
+                </p>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/DfQPQP1jXMc?si=VxMWdUEGR9yxp9Lt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    "Recomendaciones para visitar Uyuni"<br>
+                    Esta es la mejor temporada para visitar el Salar de Uyuni<br>
+                    De diciembre a abril es la estación lluviosa y se genera el efecto de espejo. De mayo a noviembre es la temporada seca.
+                </p>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/Z2f9apotgfs?si=qVRob1TeWAlfc_EQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    10 datos para visitar Uyuni<br>
+                    El Salar de Uyuni es el más grande del mundo con 10,582 kilómetros cuadrados de superficie y más de 10 millones de años de antigüedad.
+                </p>
+            </div>
+        </div>
+    
+        <div class="back-to-nav">
+            <a href="#">Volver al menú</a>
+        </div>
+    </section>
+    
+
+    
+
+    <footer>
+       
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M22 12.073c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.89h2.54v-2.2c0-2.508 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.625.771-1.625 1.563v1.872h2.773l-.443 2.89h-2.33v6.987c4.781-.75 8.438-4.887 8.438-9.878z"/>
+                    </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.265-.058 1.645-.07 4.849-.07zm0-2.163C8.741 0 8.332.012 7.052.07 5.741.13 4.439.402 3.413 1.428 2.387 2.454 2.115 3.756 2.055 5.067 1.997 6.347 1.985 6.756 1.985 12s.012 5.653.07 6.933c.06 1.311.332 2.613 1.358 3.639 1.026 1.026 2.328 1.298 3.639 1.358 1.28.058 1.689.07 6.933.07s5.653-.012 6.933-.07c1.311-.06 2.613-.332 3.639-1.358 1.026-1.026 1.298-2.328 1.358-3.639.058-1.28.07-1.689.07-6.933s-.012-5.653-.07-6.933c-.06-1.311-.332-2.613-1.358-3.639-1.026-1.026-2.328-1.298-3.639-1.358C15.669.012 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+                </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <p>© 2024 Familia Choque Calazar - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

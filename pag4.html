@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marifer</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Efecto 1: Texto brillante */
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff69b4; }
+            50% { text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493; }
+            100% { text-shadow: 0 0 10px #ff69b4; }
+        }
+
+        /* Efecto 2: Imagen flotante */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 192, 203, 0.9);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff1493;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+            transition: fill 0.3s;
+        }
+
+        .social-icons a:hover svg {
+            fill: #ff1493;
+        }
+
+        /* Primer fondo para la sección superior */
+        .header {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            padding: 2rem;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        /* Segundo fondo para la sección inferior */
+        .content {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            animation: glow 2s infinite;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Tabla de biografía */
+        .bio-table {
+            width: 80%;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .bio-table td {
+            padding: 2rem;
+            vertical-align: top;
+        }
+
+        .bio-table img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .bio-text {
+            color: #561c95;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Carrusel */
+        .carousel {
+            width: 100%;
+            margin: 2rem auto;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        /* video */
+        .schedule {
+            width: 80%;
+            height: 400px;
+            margin: 2rem auto;
+            display: block;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .external-link {
+            display: inline-block;
+            margin: 2rem;
+            padding: 1rem 2rem;
+            background: #ff69b4;
+            color: rgb(15, 6, 6);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .external-link:hover {
+            background: #bf719a;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(51, 126, 212, 0.9);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#biografia">Mi Biografía</a></li>
+            <li><a href="#horario">Visita la Facultad de Ingenieria</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="file:///H:/dise%C3%B1o%20web/final/index.html#imagenes">Menu Principal</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sección superior -->
+    <div id="inicio" class="header">
+        <h1>Bienvenidos a Mi Página</h1>
+        <h1>Maria Fernanda Choque Calazar</h1>
+        <img src="44.jpg" alt="Mi foto" class="profile-img">
+    </div>
+
+    <!-- Sección con biografía -->
+    <div id="biografia" class="content">
+        <table class="bio-table">
+            <tr>
+                <td>
+                    <img src="77.jpeg" alt="Mi foto favorita">
+                </td>
+                <td class="bio-text">
+                    <h2>Mi Historia</h2>
+                    <p>¡Hola! Mi nombre es Maria Fernanda y tengo 20 años. Me encanta la electronica, las matematicas y la robotica. 
+                    Mis sueños son ser Ingeniera en Electronica y vianajr por el mundo. En mi tiempo libre disfruto jungado juegos en linea y ver television.</p>
+                    <p>Mis colores favoritos son el rosado y azul. Me gustaría ser politica cuando sea mayor 
+                    porque quiero ayudr a las personas de escasos recurso. Mi familia es muy importante para mí y me encanta pasar tiempo con ellos.</p>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Carrusel -->
+        <div class="carousel">
+            <marquee scrollamount="10" direction="left">
+                <img src="22.jpg" alt="Imagen 1" height="200">
+                <img src="33.jpg" alt="Imagen 2" height="200">
+                <img src="55.jpeg" alt="Imagen 3" height="200">
+                <img src="66.jpeg" alt="Imagen 3" height="200">
+            </marquee>
+        </div>
+
+        <!-- Link externo -->
+        <div id="horario">
+        <center>
+            <a href="hhttps://miing.umsa.edu.bo/" class="external-link" target="_blank">
+                Visita la Facultad de Ingeniera
+            </a>
+        </center>
+
+        <!-- video -->
+        <center>
+        
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HtiR9mHiCGY?si=mINVqlLxcvI3Qiyx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>
+                Laboratorio Mención Control de la Carrera de Ingeniería Electrónica de la UMSA - Proceso Manufacturabr </p>
+                
+            </p>
+        </div>
+    </center>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073
+                    4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+        <p>¡Contáctame en mis redes sociales!</p>
+        <p>Correo: ferconsul@gmail.com</p>
+        <p>&copy; 2024 Maria Fernando Choque Calazar - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

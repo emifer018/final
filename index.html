@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia Choque Calazar</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('familia.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #c10dca;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #23032a;
+        }
+
+        a {
+            text-decoration: none;
+            color: #04042e;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #f43524;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(239, 243, 243, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            font-size: 18px;
+        }
+
+        .navbar .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .social-icons a {
+            font-size: 20px;
+        }
+        .social-icons a:hover svg {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        /* Secciones */
+        section {
+            min-height: 5vh; /*tamalo de titulo*/
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background: rgba(241, 192, 245, 0.7);
+        }
+
+        section:nth-child(odd) {
+            background: rgba(216, 153, 241, 0.7);
+        }
+
+        /* Botón volver arriba */
+        .back-to-top {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #5d00ff;
+            color: #000;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .back-to-top:hover {
+            background: #FF4500;
+            color: #fff;
+        }
+
+        /* Carrusel */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 60%;
+            margin: 5px auto;
+            position: relative;
+            border: 2px solid #dfc6f3;
+            border-radius: 10px;
+            height: 500px; /* Ajusta la altura deseada */
+        }
+
+        .carousel-track {
+            display: flex;
+            width: calc(100% * 5);
+            animation: slide 8s infinite;
+        }
+
+        .carousel img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            95% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        textarea {
+            width: 28%;
+            height: 180px;
+            margin: 20px auto;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            resize: none;
+            font-weight: bold;       /* Para hacer la letra negrilla */
+            font-style: italic;      /* Para hacer la letra inclinada (cursiva) */
+        }
+
+        /* Pie de página */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ff0000;
+        }
+        .hover-scale {
+         
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .imagen {
+  transition: transform 0.3s ease-in-out; /* Duración y suavidad de la transición */
+  width: 100%;
+  height: auto;
+}
+
+.imagen:hover {
+  transform: scale(120.120); /* Aumenta el tamaño en un 20% */
+}
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 260px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item p {
+            color: #09240c;
+            margin-top: 10px;
+            font-weight: bold;
+            max-width: 280px;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-image: url('mascota.jpg'); /*cambio de fondo de la calcu*/
+        }
+        #display {
+            width: 93%; /* ancho del display*/
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+        .button {
+            width: 70px;
+            height: 70px;
+            font-size: 24px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+        }
+        .button:active {
+            background-color: #ccc;
+        }
+        .row {
+            display: flex;
+        }
+        #whasap .container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contact-form button {
+    background: #25D366;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background: #128C7E;
+}
+
+
+
+/* Estilos para Todo UPDS */
+#tu .container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(173, 167, 167, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(128, 11, 11, 0.1);
+    color: #000;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#task-list li.completed {
+    background: #e8f5e9;
+    text-decoration: line-through;
+    color: #666;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+#new-task {
+    width: 70%;
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-btn {
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background: #0056b3;
+}
+
+.celebration {
+    display: none;
+    text-align: center;
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background: #e8f5e9;
+    border-radius: 5px;
+}
+
+.celebration.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hacer los contenedores responsivos */
+@media (max-width: 600px) {
+    #whasap .container,
+    #tu .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #new-task {
+        width: 60%;
+    }
+
+    .add-btn {
+        padding: 12px 15px;
+    }
+}     
+
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <ul>
+            
+            <li><a href="#inicio"></a></li>
+            <li><a href="#imagenes">Galeria de Imagenes</a></li>
+            <li><a href="#personajes">El pilar fundamental</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#datos">Calculadora</a></li>
+            <li><a href="#whasap">Whatsapp Web</a></li>
+            <li><a href="#tu">To Do UPDS</a></li>
+              
+        </ul>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M22 12.073c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.89h2.54v-2.2c0-2.508 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.625.771-1.625 1.563v1.872h2.773l-.443 2.89h-2.33v6.987c4.781-.75 8.438-4.887 8.438-9.878z"/>
+                    </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.265-.058 1.645-.07 4.849-.07zm0-2.163C8.741 0 8.332.012 7.052.07 5.741.13 4.439.402 3.413 1.428 2.387 2.454 2.115 3.756 2.055 5.067 1.997 6.347 1.985 6.756 1.985 12s.012 5.653.07 6.933c.06 1.311.332 2.613 1.358 3.639 1.026 1.026 2.328 1.298 3.639 1.358 1.28.058 1.689.07 6.933.07s5.653-.012 6.933-.07c1.311-.06 2.613-.332 3.639-1.358 1.026-1.026 1.298-2.328 1.358-3.639.058-1.28.07-1.689.07-6.933s-.012-5.653-.07-6.933c-.06-1.311-.332-2.613-1.358-3.639-1.026-1.026-2.328-1.298-3.639-1.358C15.669.012 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+                </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Título general -->
+    <section id="inicio" class="fade-in">
+        <h1>Bienvenidos al Hogar de la Familia Choque Calazar</h1>
+        <p>Un lugar donde los recuerdos y el amor nos unen.</p>
+    </section>
+
+    <!-- Carrusel -->
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="soldado.jpg" alt="Imagen 1">
+            <img src="familia.jpg" alt="Imagen 2">
+            <img src="felices.jpg" alt="Imagen 3">
+            <img src="rock.jpg" alt="Imagen 4">
+            <img src="familia.jpg" alt="Imagen 5">
+        </div>
+    </div>
+
+    <section id="imagenes" class="fade-in">
+        <h2>Galeria de Imagenes</h2>
+        <div class="hover-scale">
+            <div class="gallery-item">
+                <img src="estadium.jpg" alt="Imagen 1" class="imagen">
+                <p>Rumbo al stadium</p>
+                <a href="file:///H:/dise%C3%B1o%20web/final/pag4.html"> Su perfil de Maria Maria Choque Calazar  </a>
+            </div>
+            <div class="gallery-item">
+                <img src="chanchito.jpg" alt="Imagen 2"class="imagen">
+                <p>A comer un chanchito a la cruz</p>
+            </div>
+            <div class="gallery-item">
+                <img src="campeona.jpg" alt="Imagen 3"class="imagen">
+                <p>Celebrando a mi campeona</p>
+                <a href="file:///H:/dise%C3%B1o%20web/final/pag1.html"> Invitacion a mis 15 años  </a>
+            </div>
+            <div class="gallery-item">
+                <img src="dosamores.jpg" alt="Imagen 4" class="imagen">
+                <p>Mis dos amores</p>
+                <a href="file:///H:/dise%C3%B1o%20web/final/pag5.html"> Recuerso de mis Nenas  </a>
+            </div>
+        </div>
+        <div class="hover-scale">
+            <div class="gallery-item">
+                <img src="pesca.JPG" alt="Imagen 5" class="imagen">
+                <p>de pesca en Zongo</p>
+            </div>
+            <div class="gallery-item">
+                <img src="bautizo.jpg" alt="Imagen 6" class="imagen">
+                <p>Bautizo de mis nenas</p>
+            </div>
+            <div class="gallery-item">
+                <img src="mascota.JPG" alt="Imagen 7" class="imagen">
+                <p>Nuestra mascota</p>
+            <a href="file:///H:/dise%C3%B1o%20web/final/pag2.html"> Un especial a los perros  </a>
+            </div>
+            <div class="gallery-item">
+                <img src="coroico.JPG" alt="Imagen 8" class="imagen">
+                <p>Paseo a Coroico</p>
+                <a href="file:///H:/dise%C3%B1o%20web/final/pag3.html"> Un viaje a Uyuni  </a>
+            </div>
+        </div>
+        <a href="#inicio" class="back-to-top">Volver al Inicio</a>
+    </section>
+
+    <section id="personajes" class="fade-in">
+        <h2>El pilar fundamental de la familia</h2>
+        <table>
+            <tr>
+                <td class="personaje-imagen">
+                    <img src="principal.jpg" width="500" height="350" alt="Imagen de Marily">
+                    
+                </td>
+                
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td class="personaje-textarea">
+                    <textarea style="width: 500px; height: 300px; resize: none;"placeholder="En el reflejo de tus ojos, encuentro el universo entero, cada mirada tuya es un verso que escribo primero. En tu risa hallé la música de un amor sincero, contigo, mi vida, es un eterno y dulce viajero. En la calidez de tus abrazos, encuentro mi hogar.
+                    cada uno es como una canción que me hace suspirar. En tus manos encuentro la fuerza para enfrentar, junto a ti, mi amada, cada día es un dulce soñar.
+                    Mi amada esposa MARILY"></textarea>
+                </td>
+                
+            </tr>
+        </table>
+        <a href="#inicio" class="back-to-top">Volver al Inicio</a>
+    </section>
+
+    <section id="videos" class="fade-in">
+    
+        <h2>Videos de la Familia</h2>
+        <div>
+            <table cellpadding="4" cellspacing="0">
+                <tr>
+                    <td>
+                     
+                        <iframe width="560" height="315" 
+                        src="https://drive.google.com/file/d/11Xp_z-kAPHpjX5_BfW-KEwkl1dd_wOwn/preview?embedded=true" 
+                        title="Presentacion del ballet" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                        <br>
+                        <p>
+                            Su pirmera presentacion de mi hija Emily<br>
+                            Ballet del Colevio Ave Maria año 2014                            
+                       
+                    </td>
+                    <td>
+                        
+                        <iframe width="560" height="315" 
+                        src="https://drive.google.com/file/d/1xHbTp4cRDxB0QdetBo1xnruO9Zl_VUOv/preview" 
+                        title="Cumpleaños" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                        </iframe>
+                        <p>
+                            Festejado los cumpleaños de Papa<br>
+                            Mi hija Marifer me dio la sorpresa con su torta<br>
+                            
+                        </p>
+                    </td>
+
+                </tr>
+            </table>
+            <a href="#inicio" class="back-to-top">Volver al Inicio</a>
+        </div>
+    </section>
+  /*calculadoras*/
+  <section id="datos" class="fade-in">
+    <h2>Calculadora</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <!-- Columna para la calculadora -->
+            <td style="width: 50%; vertical-align: top; padding: 10px;">
+                <div class="calculator" style="margin: auto; display: inline-block;">
+                    <input type="text" id="display" disabled style="width: 93%; margin-bottom: 10px;">
+                    <div class="row">
+                        <button class="button" onclick="clearDisplay()">C</button>
+                        <button class="button" onclick="appendToDisplay('/')">/</button>
+                        <button class="button" onclick="appendToDisplay('*')">*</button>
+                        <button class="button" onclick="deleteLast()">←</button>
+                    </div>
+                    <div class="row">
+                        <button class="button" onclick="appendToDisplay('7')">7</button>
+                        <button class="button" onclick="appendToDisplay('8')">8</button>
+                        <button class="button" onclick="appendToDisplay('9')">9</button>
+                        <button class="button" onclick="appendToDisplay('-')">-</button>
+                    </div>
+                    <div class="row">
+                        <button class="button" onclick="appendToDisplay('4')">4</button>
+                        <button class="button" onclick="appendToDisplay('5')">5</button>
+                        <button class="button" onclick="appendToDisplay('6')">6</button>
+                        <button class="button" onclick="appendToDisplay('+')">+</button>
+                    </div>
+                    <div class="row">
+                        <button class="button" onclick="appendToDisplay('1')">1</button>
+                        <button class="button" onclick="appendToDisplay('2')">2</button>
+                        <button class="button" onclick="appendToDisplay('3')">3</button>
+                        <button class="button" onclick="calculateResult()">=</button>
+                    </div>
+                    <div class="row">
+                        <button class="button" style="width: 145px;" onclick="appendToDisplay('0')">0</button>
+                        <button class="button" onclick="appendToDisplay('.')">.</button>
+                        <button class="button" onclick="squareNumber()">X²</button>
+                    </div>
+                </div>
+            </td>
+            <!-- Columna para el texto -->
+            <td style="width: 50%; vertical-align: top; padding: 10px;">
+                <textarea class="explanation-textarea" style="width: 80%; height: 300px;" placeholder="Cambiar el background de la calculadora: para cambia es background se ttiene que modificar en la siguiente linea de comando background-image: url('2.jpg'), en este caso se coloco como fondo una imagen.
+Areglar el display: para arreglar el display se modifica la siguiente linea de comando  width: 93%; que es el ancho del display.
+Este código es portable porque HTML, CSS y JavaScript son compatibles con cualquier navegador moderno además el contenido en su solo archivo facilita su distribución y ejecución en cualquier entorno, se ejecuta localmente, no requiere Frameworsk externos, no requiere de software adicional."></textarea>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+    
+    
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+    
+    
+        function deleteLast() {
+            var display = document.getElementById('display').value;
+            document.getElementById('display').value = display.slice(0, -1);
+        }
+    
+    
+        function calculateResult() {
+            var display = document.getElementById('display').value;
+            try {
+                document.getElementById('display').value = eval(display);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+            function squareNumber() {
+         var display = document.getElementById('display').value;
+         if (!isNaN(display) && display !== '') {
+             document.getElementById('display').value = Math.pow(display, 2);
+          } else {
+        document.getElementById('display').value = 'Error';
+            }
+        }
+         }
+    </script>
+
+    <a href="#inicio" class="back-to-top">Volver al Inicio</a>   
+</section>
+<!-- whasapp web -->
+<section id="whasap" class="fade-in">
+    
+    
+    <div class="container">
+        <h1>Contacto por WhatsApp</h1>
+        <form id="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+
+            <label for="phone">Número de Celular:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Tu número de celular">
+
+            <label for="option">Selecciona una opción:</label>
+            <select id="option" name="option">
+                <option value="Cita">Cita</option>
+                <option value="Reclamo">Reclamo</option>
+                <option value="Consulta">Consulta</option>
+            </select>
+
+            <button type="button" onclick="sendToWhatsApp()">Contactar por WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var option = document.getElementById('option').value;
+
+            if (name && phone) {
+                // Verificar que el número de teléfono es válido (solo números y sin símbolos)
+                var phoneNumber = phone.replace(/\D/g, '');
+
+                // Generar mensaje para WhatsApp
+                var message = `Hola, soy ${name}. Quiero hacer una ${option}. Mi número es ${phone}.`;
+                var encodedMessage = encodeURIComponent(message);
+                var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                // Redirigir a WhatsApp Web
+                window.open(whatsappUrl, '_blank');
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        }
+    </script>
+        <a href="#inicio" class="back-to-top">Volver al Inicio</a>
+    </div>
+</section>
+<!-- tu DO -->
+<section id="tu" class="fade-in">
+    
+    <div class="container">
+        <h1>To Do UPDS</h1>
+        <ul id="task-list">
+            <li>Ir a la universidad <button class="remove-btn">Eliminar</button></li>
+            <li>Realizar tareas <button class="remove-btn">Eliminar</button></li>
+            <li>Estudiar media hora <button class="remove-btn">Eliminar</button></li>
+        </ul>
+
+        <input type="text" id="new-task" placeholder="Nueva actividad...">
+        <button class="add-btn" onclick="addTask()">Agregar actividad</button>
+
+        <div class="celebration" id="victory-message">¡Todas las actividades completadas!</div>
+    </div>
+
+    <script>
+        const taskList = document.getElementById('task-list');
+        const victoryMessage = document.getElementById('victory-message');
+
+        // Función para agregar actividades
+        function addTask() {
+            const taskText = document.getElementById('new-task').value;
+            if (taskText.trim() === '') {
+                return;
+            }
+
+            const li = document.createElement('li');
+            li.textContent = taskText;
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Eliminar';
+            removeBtn.className = 'remove-btn';
+            removeBtn.onclick = removeTask;
+            li.appendChild(removeBtn);
+            li.onclick = toggleComplete;
+
+            taskList.appendChild(li);
+            document.getElementById('new-task').value = '';
+
+            checkVictory();
+        }
+
+        // Función para eliminar actividades
+        function removeTask(event) {
+            event.target.parentElement.remove();
+            checkVictory();
+        }
+
+        // Función para marcar como completada una actividad
+        function toggleComplete(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('completed');
+                checkVictory();
+            }
+        }
+
+        // Verificar si todas las actividades están completadas
+        function checkVictory() {
+            const tasks = taskList.getElementsByTagName('li');
+            const allCompleted = Array.from(tasks).every(task => task.classList.contains('completed'));
+
+            if (allCompleted && tasks.length > 0) {
+                victoryMessage.classList.add('show');
+            } else {
+                victoryMessage.classList.remove('show');
+            }
+        }
+    </script>  
+
+    </script>
+        <a href="#inicio" class="back-to-top">Volver al Inicio</a>
+    </div>
+</section>
+
+    <!-- Pie de página -->
+
+    <footer>
+       
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M22 12.073c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.89h2.54v-2.2c0-2.508 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.625.771-1.625 1.563v1.872h2.773l-.443 2.89h-2.33v6.987c4.781-.75 8.438-4.887 8.438-9.878z"/>
+                    </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.265-.058 1.645-.07 4.849-.07zm0-2.163C8.741 0 8.332.012 7.052.07 5.741.13 4.439.402 3.413 1.428 2.387 2.454 2.115 3.756 2.055 5.067 1.997 6.347 1.985 6.756 1.985 12s.012 5.653.07 6.933c.06 1.311.332 2.613 1.358 3.639 1.026 1.026 2.328 1.298 3.639 1.358 1.28.058 1.689.07 6.933.07s5.653-.012 6.933-.07c1.311-.06 2.613-.332 3.639-1.358 1.026-1.026 1.298-2.328 1.358-3.639.058-1.28.07-1.689.07-6.933s-.012-5.653-.07-6.933c-.06-1.311-.332-2.613-1.358-3.639-1.026-1.026-2.328-1.298-3.639-1.358C15.669.012 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+                </svg>
+            </a>
+            <a href="https://www.x.com" target="_blank" aria-label="X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <p>© 2024 Familia Choque Calazar - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
